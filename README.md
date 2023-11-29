@@ -183,3 +183,11 @@ sudo cp ~/hetic-tac-toe.<etudiant>.floless.fr.conf /etc/nginx/conf.d/
 sudo service nginx reload
 ```
 
+## Étape 5 (bonus): Configuration SSL (HTTPS)
+
+Cette étape est optionnelle.
+
+**Objectif**: configurer la connexion HTTPS sur HETIC-tac-toe.
+
+- Suivez les instructions pour utiliser [`certbot` avec `nginx` pour la gestion des certificats SSL
+et du HTTPS](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/)
