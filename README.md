@@ -74,7 +74,6 @@ dist
 
 Pour ce qui est de notre web service, adaptez les configurations suivantes:
 
-- Adaptez le fichier `backend/hetic-tac-toe-backend.service` du backend avec votre identifiant d'étudiant:
 - Adaptez la configuration nginx `backend/api.hetic-tac-toe.<etudiant>.floless.fr.conf` avec votre idenifiant d'étudiant:
     - renomez le fichier correctement (e.g en remplaçant `<etudiant>` par votre identifiant d'étudiant)
     - remplacez `<etudiant>` à la ligne `server_name api.hetic-tac-toe.<etudiant>.floless.fr;` par votre identifiant d'étudiant
