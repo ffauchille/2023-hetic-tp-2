@@ -28,7 +28,7 @@ Vous devriez avoir récupérer 2 dossiers: `frontend` et `backend` sur votre pos
 ### Build du frontend
 
 - En pré-requis, vous devez avoir `NodeJS` d'installé sur votre poste de travail
-  - (Conseillé): installez [`nvm`]() sur votre poste de travail puis utilisez la commande `nvm use` depuis le dossier `frontend/` pour être sur la version correcte de NodeJS (spécifié par le fichier `frontend/.nvmrc`)
+  - (Conseillé): installez [`nvm`](https://github.com/nvm-sh/nvm) sur votre poste de travail puis utilisez la commande `nvm use` depuis le dossier `frontend/` pour être sur la version correcte de NodeJS (spécifié par le fichier `frontend/.nvmrc`)
   - Autre moyen: installez la version de `NodeJS` manuellement (version spécifiée dans le fichier `frontend/.nvmrc`)
 
 - Changez le fichier `frontend/public/env-config.json` pour configurer les appels au web service correctement (remplacez `localhost:8000` par l'adresse correspondante à votre identifiant d'étudiant):
