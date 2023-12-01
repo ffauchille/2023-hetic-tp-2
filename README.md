@@ -17,6 +17,8 @@ Dans ce TP, vous allez:
 ```sh
 # Depuis votre poste de travail
 git clone git@github.com:ffauchille/hetic-tac-toe.git
+# Si vous avez une erreur, essayez en https:
+git clone https://github.com/ffauchille/hetic-tac-toe.git
 ```
 
 Vous devriez avoir récupérer 2 dossiers: `frontend` et `backend` sur votre poste de travail.
@@ -40,7 +42,7 @@ Vous devriez avoir récupérer 2 dossiers: `frontend` et `backend` sur votre pos
 ```
 
 - Adaptez la configuration `Nginx` du frontend avec votre identifiant d'étudiant:
-  - renomez `frontend/hetic-tac-toe.<etudiant>.floless.fr.conf` en utilisant votre identifiant d'étudiant
+  - renomez `frontend/hetic-tac-toe.etudiant.floless.fr.conf` en utilisant votre identifiant d'étudiant (e.g. pour `etudiant42` => `hetic-tac-toe.etudiant42.floless.fr.conf`)
   - remplacez `<etudiant>` à la ligne `server_name hetic-tac-toe.<etudiant>.floless.fr;` par votre identifiant d'étudiant
 
 - Vous pouvez packager le frontend via:
@@ -48,6 +50,10 @@ Vous devriez avoir récupérer 2 dossiers: `frontend` et `backend` sur votre pos
 ```sh
 # Déplacement vers le dossier frontend/
 cd frontend/
+# Si vous avez nvm, assurez vous que vous utilisez la bonne version
+# Regardez bien la sortie de la commande. Il est possible que vous deviez
+# installer la version de node du projet via nvm install 19
+nvm use
 # Installation des node_modules
 npm install
 # Packaging de l'application frontend
@@ -182,11 +188,36 @@ sudo cp ~/hetic-tac-toe.<etudiant>.floless.fr.conf /etc/nginx/conf.d/
 sudo service nginx reload
 ```
 
+Désormais, vous devriez avoir accès à HETIC-tac-toe servie par votre serveur distant.
+
+Visitez l'adresse `http://hetic-tac-toe.<etudiant>.floless.fr` (en remplaçant `<etudiant>` par votre identifiant d'étudiant).
+
 ## Étape 5 (bonus): Configuration SSL (HTTPS)
 
 Cette étape est optionnelle.
 
 **Objectif**: configurer la connexion HTTPS sur HETIC-tac-toe.
 
-- Suivez les instructions pour utiliser [`certbot` avec `nginx` pour la gestion des certificats SSL
-et du HTTPS](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/)
+- [`certbot`](https://certbot.eff.org) est une application CLI qui vous permets de gérer vos certificats SSL 
+
+- installez `certbot` via `snapd` (déjà installé sur vos machines):
+
+```sh
+sudo snap install --classic certbot
+```
+
+- Installez les certificats pour les 2 noms de domaines:
+
+```sh
+sudo certbot --nginx
+```
+
+Plusieurs prompts vont venir vous poser des questions:
+
+1. Premier prompt: entrez une addresse email qui sera référencé dans le certificat. Elle ne doit pas forcément être valide. Mettez `<etudiant>@floless.fr` (en remplaçant `<etudiant>` par votre identifiant d'étudiant)
+1. Second prompt: tapez `Y` puis entrée
+1. Troisième prompt: tapez entrée directement (cela selectionnera tout vos domaines)
+
+Après cela, vous devriez pouvoir accéder à votre application en https.
+
+Félicitations!
