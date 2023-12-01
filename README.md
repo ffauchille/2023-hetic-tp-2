@@ -96,11 +96,11 @@ Vous avez utilisé le protocole `ssh` pour vous connecter à votre serveur dista
 
 ```sh
 # envoi des fichiers build du frontend
-scp -i <chemin_vers_votre_cle_ssh_privee> -r frontend/dist ubuntu@<etdudiant>.floless.fr:
+scp -i <chemin_vers_votre_cle_ssh_privee> -r frontend/dist ubuntu@<etudiant>.floless.fr:
 # envoi de la configuration nginx du frontend
-scp -i <chemin_vers_votre_cle_ssh_privee> -r frontend/hetic-tac-toe.<etudiant>.floless.fr.conf ubuntu@<etdudiant>.floless.fr:
+scp -i <chemin_vers_votre_cle_ssh_privee> -r frontend/hetic-tac-toe.<etudiant>.floless.fr.conf ubuntu@<etudiant>.floless.fr:
 # envoi des fichiers source du backend
-scp -i <chemin_vers_votre_cle_ssh_privee> -r backend ubuntu@<etdudiant>.floless.fr:
+scp -i <chemin_vers_votre_cle_ssh_privee> -r backend ubuntu@<etudiant>.floless.fr:
 ```
 
 Assurez-vous de bien avoir les fichiers sur votre serveur distant:
